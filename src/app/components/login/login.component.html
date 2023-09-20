@@ -1,14 +1,18 @@
 <div class="login-container">
-  <h1>Iniciar Sesión</h1>
-  <form>
-    <div class="form-group">
-      <label for="username">Nombre de usuario:</label>
-      <input type="text" id="username" name="username">
-    </div>
-    <div class="form-group">
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password">
-    </div>
-    <button type="submit">Iniciar Sesión</button>
-  </form>
-</div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field class="full-width">
+        <input type="text" matInput placeholder="Username" formControlName="username">
+        <mat-error *ngIf="loginForm.get('username')?.errors && loginForm.get('username')?.errors!['required']">Name is required</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="password" matInput placeholder="Password" formControlName="password">
+        <mat-error *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.errors!['required']">Password is required</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" class="full-width" [disabled]="loginForm.invalid">Submit</button>
+    </form>
+  </mat-card>
+</div>  

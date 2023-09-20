@@ -1,38 +1,20 @@
 .login-container {
-    width: 300px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  form {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
   
-  .form-group {
-    margin-bottom: 20px;
+  mat-card {
+    width: 300px;
   }
   
-  label {
-    font-weight: bold;
+  .full-width {
+    width: 100%;
+    margin-top: 10px;
   }
-  
-  input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+  button[disabled] {
+    opacity: 0.6; 
+    cursor: not-allowed;
   }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
