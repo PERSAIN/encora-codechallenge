@@ -21,10 +21,26 @@ export class LoginComponent {
   });
 
   public login(): void {
-    if (this.loginForm.value.username !== 'juan') alert('Wrong username');
-    if (this.loginForm.value.password !== 'encora') alert('Wrong password');
-
-    localStorage.setItem('token', Math.random().toString());
-    this.router.navigate(['/']);
+    const username = this.loginForm.value.username;
+    const password = this.loginForm.value.password;
+    let errorOccurred = false;
+  
+    if (username !== 'juan') {
+      alert('Wrong username');
+      errorOccurred = true;
+    }
+  
+    if (password !== 'encora') {
+      alert('Wrong password');
+      errorOccurred = true;
+    }
+  
+    if (!errorOccurred) {
+      const token = Math.random().toString();
+      localStorage.setItem('token', token);
+      this.router.navigate(['/']);
+    }
   }
+  
+  
 }
