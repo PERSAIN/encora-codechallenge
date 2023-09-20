@@ -1,3 +1,9 @@
+# READ THIS!!!!!!!!!
+the username is ---> Juan
+the password is  ---> encora
+
+
+
 # EncoraCodechallenge
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
